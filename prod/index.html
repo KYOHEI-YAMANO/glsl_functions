@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<dl id="clamp">
+    <dt>clamp(x, a, b)</dt>
+    <dd>
+        <p class="explain">min(max(x, a), b)を返す。なお、HLSLなどで実装されている saturate 関数は、clamp(a, 0.0, 1.0) によって実現できる</p>
+        <div class="try">
+            <div class="inputs">
+                <form>
+                    <div class="input"><div class="label">x:</div><input class="x" type="text"></div>
+                    <div class="input"><div class="label">a:</div><input class="a" type="text"></div>
+                    <div class="input"><div class="label">b:</div><input class="b" type="text"></div>
+                    <button>submit</button>
+                </form>
+            </div>
+            <div class="result_wrap">結果<div class="result"></div></div>
+        </div>
+    </dd>
+</dl>
+
+<dl id="dot">
+    <dt>dot(x, y)</dt>
+    <dd>
+        <p class="explain">xとyの内積をfloatで返す<br />float dot( genType v0, genType v1 ) <br />v0.x * v1.x + v0.y + v1.y</p>
+        <div class="try">
+            <div class="inputs">
+                <form>
+                    <div class="input"><div class="label">v0:</div><input class="x" type="text" placeholder="x,y"></div>
+                    <div class="input"><div class="label">v1:</div><input class="y" type="text" placeholder="x,y"></div>
+                    <button>submit</button>
+                </form>
+            </div>
+            <div class="result_wrap">結果<div class="result"></div></div>
+        </div>
+    </dd>
+</dl>
+
+<div class="reference">
+    <p>参考</p>
+    <ul>
+        <li><a href="https://qiita.com/edo_m18/items/71f6064f3355be7e4f45">https://qiita.com/edo_m18/items/71f6064f3355be7e4f45</a></li>
+        <li><a href="http://ec.nikkeibp.co.jp/nsp/dl/08513/HTML5GAMES_AppC.pdf">http://ec.nikkeibp.co.jp/nsp/dl/08513/HTML5GAMES_AppC.pdf</a></li>
+    </ul>
+</div>
+
+<script type="text/javascript" src="js/bundle.js"></script></body>
+</html>

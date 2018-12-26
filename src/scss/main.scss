@@ -1,0 +1,60 @@
+@import "reset";
+
+dl {
+  padding: 20px;
+  border-bottom: 1px solid #ccc;
+  dt {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  dd {
+    margin-top: 20px;
+    padding-left: 20px;
+  }
+  .explain {
+    font-size: 14px;
+    color: #616161;
+    line-height: 1.8;
+  }
+  .inputs {
+    margin-top: 10px;
+    .label {
+      display: inline-block;
+      margin-right: 5px;
+    }
+    .input {
+      margin-right: 10px;
+    }
+    input {
+      width: 80px;
+    }
+    form {
+      > * {
+        display: inline-block;
+      }
+    }
+  }
+  .result_wrap {
+    margin-top: 20px;
+    font-size: 14px;
+    .result {
+      display: inline-block;
+      margin-left: 20px;
+    }
+  }
+}
+
+.reference {
+  padding: 20px;
+  margin: 20px;
+  font-size: 12px;
+  background: #efefef;
+  p {
+    margin-bottom: 10px;
+  }
+  li {
+    &:not(:first-child) {
+      margin-top: 5px;
+    }
+  }
+}
