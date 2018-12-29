@@ -41,11 +41,105 @@
     </dd>
 </dl>
 
+<dl id="length">
+    <dt>length(x)</dt>
+    <dd>
+        <p class="explain">ベクトルvの長さ。<br /> sqrt(v.x*v.x + v.y*v.y + ...)</p>
+        <div class="try">
+            <div class="inputs">
+                <form>
+                    <div class="input"><div class="label">x:</div><input class="x" type="text" placeholder="x,y"></div>
+                    <button>submit</button>
+                </form>
+            </div>
+            <div class="result_wrap">結果<div class="result"></div></div>
+        </div>
+    </dd>
+</dl>
+
+
+<dl id="mix">
+    <dt>mix(x, y, a)</dt>
+    <dd>
+        <p class="explain">x(1-a)+y*aを返す（つまり線形補間）</p>
+        <div class="try">
+            <div class="inputs">
+                <form>
+                    <div class="input"><div class="label">x:</div><input class="x" type="text"></div>
+                    <div class="input"><div class="label">y:</div><input class="y" type="text"></div>
+                    <div class="input"><div class="label">a:</div><input class="a" type="text"></div>
+                    <button>submit</button>
+                </form>
+            </div>
+            <div class="result_wrap">結果<div class="result"></div></div>
+        </div>
+    </dd>
+</dl>
+
+<dl id="mod">
+    <dt>mod(x, y)</dt>
+    <dd>
+        <p class="explain">除算 x / y の剰余</p>
+        <div class="try">
+            <div class="inputs">
+                <form>
+                    <div class="input"><div class="label">x:</div><input class="x" type="text"></div>
+                    <div class="input"><div class="label">y:</div><input class="y" type="text"></div>
+                    <button>submit</button>
+                </form>
+            </div>
+            <div class="result_wrap">結果<div class="result"></div></div>
+        </div>
+    </dd>
+</dl>
+
+<dl id="normalize">
+    <dt>normalize(v)</dt>
+    <dd>
+        <p class="explain">
+            単位長に正規化されたベクトルv。<br />
+            ベクトルの正規化 -> <a href="http://yaju3d.hatenablog.jp/entry/2013/06/09/154950" target="_blank">http://yaju3d.hatenablog.jp/entry/2013/06/09/154950</a>
+        </p>
+        <div class="try">
+            <div class="inputs">
+                <form>
+                    <div class="input"><div class="label">v:</div><input class="v" type="text" placeholder="x,y,z"></div>
+                    <button>submit</button>
+                </form>
+            </div>
+            <div class="result_wrap">結果<div class="result"></div></div>
+        </div>
+    </dd>
+</dl>
+
+<dl id="smoothstep">
+    <dt>smoothstep(edge0, edge1, x)</dt>
+    <dd>
+        <p class="explain">
+            xの要素のうち、edge0以下のものは0.0、edge1以上のものは1.0 にする。<br />
+            xがedge0とedge1の間にあるときには、3次エルミート補間を返す。<br />
+            t = clamp((x - edge0) / (edge1 - edge0), 0.0, 1.0)<br />
+            return t * t * (3 - 2 * t)
+        </p>
+        <div class="try">
+            <div class="inputs">
+                <form>
+                    <div class="input"><div class="label">edge0:</div><input class="edge0" type="text"></div>
+                    <div class="input"><div class="label">edge1:</div><input class="edge1" type="text"></div>
+                    <div class="input"><div class="label">x:</div><input class="x" type="text"></div>
+                    <button>submit</button>
+                </form>
+            </div>
+            <div class="result_wrap">結果<div class="result"></div></div>
+        </div>
+    </dd>
+</dl>
+
 <div class="reference">
     <p>参考</p>
     <ul>
-        <li><a href="https://qiita.com/edo_m18/items/71f6064f3355be7e4f45">https://qiita.com/edo_m18/items/71f6064f3355be7e4f45</a></li>
-        <li><a href="http://ec.nikkeibp.co.jp/nsp/dl/08513/HTML5GAMES_AppC.pdf">http://ec.nikkeibp.co.jp/nsp/dl/08513/HTML5GAMES_AppC.pdf</a></li>
+        <li><a target="_blank" href="https://qiita.com/edo_m18/items/71f6064f3355be7e4f45">https://qiita.com/edo_m18/items/71f6064f3355be7e4f45</a></li>
+        <li><a target="_blank" href="http://ec.nikkeibp.co.jp/nsp/dl/08513/HTML5GAMES_AppC.pdf">http://ec.nikkeibp.co.jp/nsp/dl/08513/HTML5GAMES_AppC.pdf</a></li>
     </ul>
 </div>
 
