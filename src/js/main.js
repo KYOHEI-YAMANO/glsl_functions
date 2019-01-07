@@ -3,6 +3,7 @@ import "../scss/main.scss"
 
 window.addEventListener('DOMContentLoaded', () => {
   const clamp = new Clamp("clamp")
+  const cross = new Cross("cross")
   const dot = new Dot("dot")
   const length = new Length("length")
   const mix = new Mix("mix")
@@ -14,6 +15,26 @@ window.addEventListener('DOMContentLoaded', () => {
 function clamp(x, a, b) {
   console.log(`Math.min(Math.max(${x}, ${a}), ${b})`)
   return Math.min(Math.max(x, a), b)
+}
+
+function cross(x, y) {
+  let tmpV0 = x.split(',')
+  let v0 = {x: tmpV0[0], y: tmpV0[1], z: tmpV0[2]}
+  let tmpV1 = y.split(',')
+  let v1 = {x: tmpV1[0], y: tmpV1[1], z: tmpV1[2]}
+
+  console.log(`[
+    ${v0.y} * ${v1.z} - ${v1.y} * ${v0.z},
+    ${v0.z} * ${v1.x} - ${v1.z} * ${v0.x},
+    ${v0.x} * ${v1.y} - ${v1.x} * ${v0.y}
+    ]`)
+
+  let ary = [
+    v0.y * v1.z - v1.y * v0.z,
+    v0.z * v1.x - v1.z * v0.x,
+    v0.x * v1.y - v1.x * v0.y
+  ]
+  return ary
 }
 
 function dot(x, y) {
@@ -117,6 +138,26 @@ class Clamp extends Common {
     const b = this.b.value
 
     this.showResult(clamp(x, a, b))
+  }
+
+}
+
+class Cross extends Common {
+  constructor(target) {
+    super(target)
+
+    this.v0 = this.el.querySelector('.v0')
+    this.v1 = this.el.querySelector('.v1')
+
+    this.init()
+  }
+
+  calc = e => {
+    e.preventDefault()
+    const v0 = this.v0.value
+    const v1 = this.v1.value
+
+    this.showResult(cross(v0, v1))
   }
 
 }
