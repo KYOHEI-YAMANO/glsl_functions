@@ -2,14 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>GLSL Function</title>
 </head>
 <body>
 
 <dl id="clamp">
     <dt>clamp(x, a, b)</dt>
     <dd>
-        <p class="explain">min(max(x, a), b)を返す。なお、HLSLなどで実装されている saturate 関数は、clamp(a, 0.0, 1.0) によって実現できる</p>
+        <p class="explain">
+            // clamp(x, a, b) == min(max(x, a), b)<br />
+            vec4 e1 = clamp(vec4(0.4), vec4(1.0), vec4(2.0)); // => vec4(1.0)<br />
+            vec4 e2 = clamp(vec4(1.4), vec4(1.0), vec4(2.0)); // => vec4(1.4)<br />
+            vec4 e3 = clamp(vec4(2.4), vec4(1.0), vec4(2.0)); // => vec4(2.0)<br />
+        </p>
         <div class="try">
             <div class="inputs">
                 <form>
